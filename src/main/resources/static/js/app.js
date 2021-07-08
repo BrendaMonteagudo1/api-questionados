@@ -68,27 +68,6 @@ function cargarProximaPregunta() {
     });
 }
 
-function getPreguntaRando(preguntas) {
-    var random = Math.floor(Math.random() * preguntas.length);
-    return preguntas[random];
-}
-
-function checkRespuestaNoSeguro(event) {
-    //Aca llamar a la funcion que verifica la respuesta
-    //Ahora solo harcodeado
-    if (event.data.respuestaId == 7 || event.data.respuestaId == 66 || event.data.respuestaId == 3221) {
-        festejo(this);
-    }
-    else {
-        respuestaErronea(this);
-
-    }
-    //proxima pregunta en 1 segundo
-    setTimeout(() => {
-        cargarProximaPregunta();
-    }, 1000);
-}
-
 function checkRespuesta(event) {
    //console.log(event)
     let opcion = {
